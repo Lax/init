@@ -21,7 +21,7 @@ then
 
   puppet resource augeas selinux_config context=/files/etc/selinux/config changes="set SELINUX disabled"
   puppet resource augeas network context=/files/etc/sysconfig/network changes="set HOSTNAME ${HOSTNAME}"
-  puppet resource augeas sshd_config context=/files/etc/ssh/sshd_config changes="set Port 65022"
+  puppet resource augeas sshd_config context=/files/etc/ssh/sshd_config changes="set Port 1022"
 
   puppet resource user lax ensure=present managehome=true groups=wheel
   puppet resource file /etc/sudoers.d/lax content='lax      ALL=(ALL)       NOPASSWD: ALL'
